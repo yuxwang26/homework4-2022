@@ -1,0 +1,133 @@
+body {
+font-family: Poppins, serif;
+background-image: url('../images/concrete_seamless.png');
+background-color: #f1f1f1;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav_links {
+  display: flex;
+  flex-direction: column;
+}
+
+a:visited {
+  color: blue;
+}
+
+.card > header {
+  background-color: #288088;
+  border: 2px solid #45ADAD;
+  padding: 20px 0 20px;
+  border-radius: 50px 50px 0 0;
+}
+
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 450px;
+}
+
+.gallery img {
+  border: 10px solid #50C7C7;
+  margin: 10px;
+  width: 300px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  
+}
+
+#logo {
+  animation-name: logo;
+  animation-duration: 5s;
+}
+
+@keyframes logo {
+  from {width: 25px; opacity: 0;}
+  to{ width: 475px; opacity: 1;}
+}
+
+@media screen and (min-width: 900px) {
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav_links {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  flex-basis: 250px;
+}
+
+body > header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  #logo {
+    animation: none;
+  }
+}
+
+@media print {
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: none;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav_links { 
+    display: inline-flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;   
+  }
+
+  .pricing{
+    flex-wrap: nowrap;
+    align-items: flex-end;
+  } 
+
+  .card {
+    border: 2px solid #45ADDD;
+    flex-basis: 325px;
+  }
+
+  .gallery, #gallery {
+    display: none;
+  }
+
+  .card li:nth-child(2)::after {
+    content: "\1F44D";
+  }
+}
